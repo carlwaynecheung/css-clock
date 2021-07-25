@@ -1,0 +1,60 @@
+:root {
+    --second: 1s; 
+    --minute: calc(var(--second) * 60); 
+    --hour: calc(var(--minute) * 60); 
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.second.hand {
+    animation: rotate steps(60) var(00minute) infinite;
+}
+
+.minute.hand {
+    animation: rotate linear var(--hour) infinite;
+}
+
+.hour.hand {
+    animation: rotate linear calc(var(--hour) * 12) infinite; 
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color:grey;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hand {
+    position: absolute;
+    left: calc(50% - var(--width) / 2); 
+    top: 50%;
+    width: var(--width); 
+    height: var(--height);
+    background-color:cornflowerblue;
+    transform-origin: center 0;
+    border-radius: calc(var(--width) / 2);
+}
+
+.second {
+    --width: 5px;
+    --height: 240px; 
+    --color: red; 
+}
+
+.minute {
+    --width: 15px;
+    --height: 190px; 
+    --color: black;
+}
+
+.hour {
+    --width: 15px;
+    --height: 150px;
+    --color: black;
+}
